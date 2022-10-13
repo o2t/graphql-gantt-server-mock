@@ -27,11 +27,22 @@ const typeDefs = `#graphql
     freeFloat: Duration
     totalFloat: Duration
     initialDelay: Duration
+    type: TaskType
   }
 
   type TaskStep {
     from: DateTime
     to: DateTime
+  }
+
+  union TaskType = HammockTaskType | BufferTaskType
+
+  type HammockTaskType {
+    dummy: String
+  }
+
+  type BufferTaskType {
+    buffer: Duration
   }
 
   type TaskLink {

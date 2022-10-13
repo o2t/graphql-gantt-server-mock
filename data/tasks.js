@@ -16,6 +16,10 @@ const tasks = [
         parent: 1,
         from: "2022-10-25",
         to: "2022-10-31",
+        type: {
+            __typename: "BufferTaskType",
+            buffer: 10
+        },
         steps: [{
             from: "2022-10-27",
             to: "2022-10-28"
