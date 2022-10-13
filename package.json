@@ -1,0 +1,31 @@
+{
+  "name": "gantt-mock-backend",
+  "version": "0.0.1",
+  "description": "Mock GraphQL server for the new Gantt module",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/o2t/graphql-gantt-server-mock.git"
+  },
+  "keywords": [
+    "gantt",
+    "graphql",
+    "mock"
+  ],
+  "author": "dblavier@one2team.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/o2t/graphql-gantt-server-mock/issues"
+  },
+  "homepage": "https://github.com/o2t/graphql-gantt-server-mock#readme",
+  "dependencies": {
+    "@apollo/server": "^4.0.0",
+    "graphql": "^16.6.0",
+    "moment": "^2.29.4"
+  }
+}
