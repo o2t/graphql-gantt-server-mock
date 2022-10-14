@@ -9,61 +9,8 @@ import tasks from './data/tasks.js'
 import links from './data/links.js'
 import dateTimeScalar from './scalar/dateTime.js';
 import durationScalar from './scalar/duration.js';
+import typeDefs from './schema.js';
 
-// The GraphQL schema
-const typeDefs = `#graphql
-  type Query {
-    tasks: [Task]
-    links: [TaskLink]
-  }
-
-  type Task {
-    id: ID!
-    name: String
-    parent: ID
-    steps: [TaskStep!]
-    from: DateTime
-    to: DateTime
-    freeFloat: Duration
-    totalFloat: Duration
-    initialDelay: Duration
-    type: TaskType
-  }
-
-  type TaskStep {
-    from: DateTime
-    to: DateTime
-  }
-
-  union TaskType = HammockTaskType | BufferTaskType
-
-  type HammockTaskType {
-    dummy: String
-  }
-
-  type BufferTaskType {
-    buffer: Duration
-  }
-
-  type TaskLink {
-    predecessor: ID!
-    successor: ID!
-    leadLag: Duration
-    type: TaskLinkType
-  }
-
-  enum TaskLinkType {
-    START_START,
-    START_FINISH,
-    FINISH_START,
-    FINISH_FINISH
-  }
-
-  scalar DateTime
-
-  scalar Duration
-
-`;
 
 // A map of functions which return data for the schema.
 const resolvers = {
